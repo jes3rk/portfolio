@@ -19,8 +19,18 @@ var portfolioContent = {
       "image": "./assets/images/GuileCat-logo.jpg",
       "imageAttr": '<a href="https://www.freepik.com/free-photos-vectors/vintage">Vintage vector created by Freepik</a>',
       "imageALT": "GuileCat logo",
-      "link": "https://jes3rk.github.io/Project1/"
+      "link": "https://jes3rk.github.io/Project1/",
+      "gitHub": "https://github.com/jes3rk/Project1"
     },
+    {
+      "title": "Hangith thee Man",
+      "descShort": "A simple game of Hangman",
+      "descLong": "<p>In this short game of Monty Python themed hangman, the player can enjoy a quick and whimsical game.</p>",
+      "image": "./assets/images/holy_grail_god.jpg",
+      "imageAlt": "GOD in all his glory",
+      "link": "https://jes3rk.github.io/Hangman-Game/",
+      "gitHub": "https://github.com/jes3rk/Hangman-Game"
+    }
   ]
 }
 
@@ -50,7 +60,7 @@ function portfolio() {
   colPri.attr("class", "col sm12 m12");
 // Primary card creator
   var cardPri = $('<div/>');
-  cardPri.attr("class", "card");
+  cardPri.attr("class", "card primary");
 // Primary card content box
   var contentPri = $('<div/>');
   contentPri.attr("class", "card-content");
@@ -62,7 +72,7 @@ function portfolio() {
   rowDiv.attr("class", "row");
 // Row to display in-depth project
   var dispDiv = $('<div/>');
-  dispDiv.attr("class", "row display")
+  dispDiv.attr("class", "row display secondary")
 // Put it all together
   $('#content-row').append(colPri);
   colPri.append(cardPri);
@@ -79,7 +89,7 @@ function portfolio() {
     colDiv.attr("class", "col sm12 m4");
 
     var cardDiv = $('<div/>');
-    cardDiv.attr("class", "card project");
+    cardDiv.attr("class", "card project tertiary");
 
     var imgDiv = $('<div/>');
     imgDiv.attr("class", "card-image");
@@ -121,13 +131,20 @@ function portfolio() {
 
 // End of for loop
   };
+// Make portfolio projects go big
+  $('.btn-floating').on('click touch', function() {
+    displayProject($(this).attr("data-index"));
+  });
 }
 
 function displayProject(index) {
   var project = portfolioContent.projects[index];
-
+// Create col for picture and button
   var picCol = $('<div/>');
   picCol.attr("class", "col sm12 m4");
+// Create row for picture
+  var imgRow = $('<div/>');
+  imgRow.attr("class", "row");
 
   var img = $('<img>');
   img.attr({
@@ -136,21 +153,59 @@ function displayProject(index) {
     "class": "portfolio-img"
   });
 
-  $('.display').append(picCol)
-  picCol.append(img);
+  var imgLink = $('<a/>');
+  imgLink.attr({
+    "href": project.link,
+    "target": "_blank"
+  });
+// Create row for button
+  var btnRow = $('<div/>');
+  btnRow.attr("class", "row center-align");
 
+// Create go away button
+  var btn = $('<a/>');
+  btn.attr("class", "close-btn waves-effect waves-light btn red");
+  btn.text("Close");
+
+// Put picture and button in
+  $('.display').append(picCol)
+  picCol.append(imgRow);
+  imgRow.append(imgLink);
+  picCol.append(btnRow);
+  btnRow.append(btn);
+  imgLink.append(img);
+
+// Create col for text
   var textCol = $('<div/>');
   textCol.attr("class", "col sm12 m8");
 
   var title = $('<h2/>');
-  title.text(project.title);
+  var link = $('<a/>');
+  link.attr({
+    "href": project.link,
+    "target": "_blank"
+  });
+  link.text(project.title);
+  title.append(link);
 
-  // var desc = $('<p/>');
-  // desc.text(project.descLong);
-
+  var gitLink = $('<a/>');
+  gitLink.attr({
+    "href": project.gitHub,
+    "target": "_blank"
+  });
+  gitLink.text("Link to GitHub");
+// Put text in
   $('.display').append(textCol);
   textCol.append(title);
   textCol.append(project.descLong);
+  textCol.append("<br>");
+  textCol.append(gitLink);
+
+// Make big portfolio projects disappear
+  $('.close-btn').on('click touch', function() {
+    console.log("test");
+    $('.display').empty();
+  });
 
 }
 
@@ -162,7 +217,7 @@ function aboutMe() {
   colDiv.attr("class", "col sm12 m12");
 
   var cardDiv = $('<div/>');
-  cardDiv.attr("class", "card about");
+  cardDiv.attr("class", "card about primary");
 
   var contentDiv = $('<div/>');
   contentDiv.attr("class", "card-content");
@@ -195,19 +250,16 @@ function aboutMe() {
 $(document).ready(function() {
   $(".button-collapse").sideNav();
 
-  // aboutMe();
-  portfolio();
+  aboutMe();
 
+// Navigate to About Me
   $('.about-me').on('click touch', function(){
     aboutMe();
   });
-
+// Navigate to Portfolio
   $('.portfolio').on('click touch', function(){
     portfolio();
   });
 
-  $('.btn-floating').on('click touch', function() {
-    console.log($(this).attr("data-index"));
-    displayProject($(this).attr("data-index"));
-  });
+
 })
