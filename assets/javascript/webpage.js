@@ -45,31 +45,38 @@ var contactContent = {
 
 function portfolio() {
   $('#content-row').empty();
-
+// Primary card col creator
   var colPri = $('<div/>');
   colPri.attr("class", "col sm12 m12");
-
+// Primary card creator
   var cardPri = $('<div/>');
   cardPri.attr("class", "card");
-
+// Primary card content box
   var contentPri = $('<div/>');
   contentPri.attr("class", "card-content");
-
+// Primary card title
   var titlePri = $('<h1/>');
-  titlePri.text(portfolio.title);
-
+  titlePri.text(portfolioContent.title);
+// Row for projects... still needs work
+  var rowDiv = $('<div/>');
+  rowDiv.attr("class", "row");
+// Row to display in-depth project
+  var dispDiv = $('<div/>');
+  dispDiv.attr("class", "row display")
+// Put it all together
+  $('#content-row').append(colPri);
+  colPri.append(cardPri);
+  cardPri.append(contentPri);
+  contentPri.prepend(dispDiv);
+  contentPri.prepend(titlePri);
 
 
   for (var i = 0; i < portfolioContent.projects.length; i++) {
     var project = portfolioContent.projects[i];
-// Create rows based on no remainders FIX THISSSS
-    // if (portfolioContent.projects.length % i === 0) {
-    //   var rowDiv = $('<div/>');
-    //   rowDiv.attr({"class": "row", "id": "row-" + i});
-    // };
+
 // Create cards
     var colDiv = $('<div/>');
-    colDiv.attr("class", "col sm12 m3");
+    colDiv.attr("class", "col sm12 m4");
 
     var cardDiv = $('<div/>');
     cardDiv.attr("class", "card project");
@@ -79,7 +86,7 @@ function portfolio() {
 
     var img = $('<img>');
     img.attr({
-      "class": "portfolio-img",
+      // "class": "portfolio-img",
       "src": project.image,
       "alt": project.imageALT,
     });
@@ -89,7 +96,10 @@ function portfolio() {
     title.text(project.title);
 
     var icon = $('<a/>');
-    icon.attr("class", "btn-floating halfway-fab waves-effect waves-light red");
+    icon.attr({
+      "class": "btn-floating halfway-fab waves-effect waves-light red",
+      "data-index": i,
+    });
     icon.html('<i class="material-icons">add</i>');
 
     var contentDiv = $('<div/>');
@@ -106,10 +116,42 @@ function portfolio() {
     imgDiv.append(icon);
     cardDiv.prepend(imgDiv);
     colDiv.append(cardDiv);
-    $('#content-row').append(colDiv);
+    rowDiv.append(colDiv)
+    contentPri.append(rowDiv);
 
 // End of for loop
-};
+  };
+}
+
+function displayProject(index) {
+  var project = portfolioContent.projects[index];
+
+  var picCol = $('<div/>');
+  picCol.attr("class", "col sm12 m4");
+
+  var img = $('<img>');
+  img.attr({
+    "src": project.image,
+    "alt": project.imageALT,
+    "class": "portfolio-img"
+  });
+
+  $('.display').append(picCol)
+  picCol.append(img);
+
+  var textCol = $('<div/>');
+  textCol.attr("class", "col sm12 m8");
+
+  var title = $('<h2/>');
+  title.text(project.title);
+
+  // var desc = $('<p/>');
+  // desc.text(project.descLong);
+
+  $('.display').append(textCol);
+  textCol.append(title);
+  textCol.append(project.descLong);
+
 }
 
 function aboutMe() {
@@ -162,5 +204,10 @@ $(document).ready(function() {
 
   $('.portfolio').on('click touch', function(){
     portfolio();
+  });
+
+  $('.btn-floating').on('click touch', function() {
+    console.log($(this).attr("data-index"));
+    displayProject($(this).attr("data-index"));
   });
 })

@@ -11,3 +11,11 @@
 .about {
   min-height: 600px;
 }
+
+.display {
+  max-height: 400px;
+}
+
+.portfolio-img {
+  max-width: 100%;
+}
