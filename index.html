@@ -2,35 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-<!-- My links -->
-    <script type="text/javascript" src="./assets/javascript/webpage.js"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Joseph Schefer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="text/javascript" src="./assets/javascript/webpage.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+<!-- Open primary container -->
     <div class="container">
-<!-- Open title row -->
-      <div class="row">
-<!-- Primary name col -->
-        <div class="col-6 name">
-          <h1>Joseph Schefer</h1>
-        </div> <!-- Close Primary name col -->
-<!-- Nav col -->
-        <div class="col-6 nav">
-          <ul>
-            <li class="nav">About</li>
-            <li class="nav">My Projects</li>
-            <li class="nav">Contact</li>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">About Me</a></li>
+            <li><a href="badges.html">Portfolio</a></li>
+            <li><a href="collapsible.html">Contact Me</a></li>
           </ul>
-        </div> <!-- Close Nav col -->
-      </div> <!-- Close title row -->
-<!-- Open body row -->
-      <div class="row">
-
-      </div> <!-- Close body row -->
-    </div>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html">About Me</a></li>
+            <li><a href="badges.html">Portfolio</a></li>
+            <li><a href="collapsible.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="content-row" class="row">
+        
+      </div>
+    </div> <!-- Close primary container -->
   </body>
 </html>
