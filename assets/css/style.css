@@ -1,5 +1,36 @@
+body {
+  background-image: url("../images/page_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.nav-wrapper {
+  padding-left: 25px;
+  background-color: forestGreen;
+}
+
+/*Mobile CSS*/
+@media only screen and (max-width: 768px) {
+  #about-me-pic {
+    width: 150px;
+    height: auto;
+  };
+}
+
+.primary {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.secondary {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tertiary {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
 #about-me-pic {
-  height: 400px;
+  max-height: 400px;
   float: left;
   margin-right: 10px;
 }
@@ -13,9 +44,23 @@
 }
 
 .display {
-  max-height: 400px;
+  background-color: white;
 }
 
 .portfolio-img {
   max-width: 100%;
+}
+
+.display a {
+  text-decoration: none;
+  color: inherit;
+  transition-duration: .5s;
+}
+
+.display a:hover {
+  color: gray;
+}
+
+.close-btn {
+  margin: auto;
 }
