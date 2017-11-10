@@ -18,7 +18,7 @@ $(document).ready(function() {
     portfolio();
   });
 // Navigate to Contact
-  $('.contact').on('click touch', function() {
+  $('.contact-me').on('click touch', function() {
     contact();
   });
 })
