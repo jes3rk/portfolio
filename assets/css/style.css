@@ -1,0 +1,13 @@
+#about-me-pic {
+  height: 400px;
+  float: left;
+  margin-right: 10px;
+}
+
+.card-content p {
+  text-indent: 15px;
+}
+
+.card {
+  min-height: 600px;
+}
