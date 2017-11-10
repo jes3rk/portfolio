@@ -16,7 +16,8 @@ var portfolioContent = {
       "title": "GuileCat",
       "descShort": "A modern password generator",
       "descLong": "<p>In this age of cybersecurity threats, a strong password is absolutely essential. But strong passwords tend to be exceedingly difficult to remember and so mosy users default to weaker, insecure passwords. Enter <b>GuileCat</b>: a password generator for the digital age. With <b>GuileCat</b>, users can generate secure yet easy to remember passwords to secure their online presence.</p><p><b>GuileCat</b> works on the simple principle that words are considerably easier to remember than a random series of characters. With <b>GuileCat</b>, users are presented with a selection of randomly chosen words outside of the top 10,000 most common words in the English language. The user then can add any number of additional numbers and symbols to their password, ensuring a secure password to safe-guard all their online activities.</p>",
-      "image": "TBD",
+      "image": "./assets/images/GuileCat-logo.jpg",
+      "imageAttr": '<a href="https://www.freepik.com/free-photos-vectors/vintage">Vintage vector created by Freepik</a>',
       "imageALT": "GuileCat logo",
       "link": "https://jes3rk.github.io/Project1/"
     },
@@ -45,19 +46,33 @@ var contactContent = {
 function portfolio() {
   $('#content-row').empty();
 
+  var colPri = $('<div/>');
+  colPri.attr("class", "col sm12 m12");
+
+  var cardPri = $('<div/>');
+  cardPri.attr("class", "card");
+
+  var contentPri = $('<div/>');
+  contentPri.attr("class", "card-content");
+
+  var titlePri = $('<h1/>');
+  titlePri.text(portfolio.title);
+
+
+
   for (var i = 0; i < portfolioContent.projects.length; i++) {
     var project = portfolioContent.projects[i];
 // Create rows based on no remainders FIX THISSSS
-    if (portfolioContent.projects.length % i === 0) {
-      var rowDiv = $('<div/>');
-      rowDiv.attr({"class": "row", "id"="row-" + i});
-    };
+    // if (portfolioContent.projects.length % i === 0) {
+    //   var rowDiv = $('<div/>');
+    //   rowDiv.attr({"class": "row", "id": "row-" + i});
+    // };
 // Create cards
     var colDiv = $('<div/>');
-    colDiv.attr("class", "col sm12 m12");
+    colDiv.attr("class", "col sm12 m3");
 
     var cardDiv = $('<div/>');
-    cardDiv.attr("class", "card");
+    cardDiv.attr("class", "card project");
 
     var imgDiv = $('<div/>');
     imgDiv.attr("class", "card-image");
@@ -75,16 +90,26 @@ function portfolio() {
 
     var icon = $('<a/>');
     icon.attr("class", "btn-floating halfway-fab waves-effect waves-light red");
-    icon.text('<i class="material-icons">add</i>');
+    icon.html('<i class="material-icons">add</i>');
 
     var contentDiv = $('<div/>');
     contentDiv.attr("class", "card-content");
 
     var contentShort = $('<p/>');
-    contentShort.text(project.descShort)
+    contentShort.text(project.descShort);
+
+    // Put it all together in the loop
+    contentDiv.append(contentShort);
+    cardDiv.append(contentDiv);
+    imgDiv.append(img);
+    contentDiv.prepend(title);
+    imgDiv.append(icon);
+    cardDiv.prepend(imgDiv);
+    colDiv.append(cardDiv);
+    $('#content-row').append(colDiv);
 
 // End of for loop
-  }
+};
 }
 
 function aboutMe() {
@@ -95,7 +120,7 @@ function aboutMe() {
   colDiv.attr("class", "col sm12 m12");
 
   var cardDiv = $('<div/>');
-  cardDiv.attr("class", "card");
+  cardDiv.attr("class", "card about");
 
   var contentDiv = $('<div/>');
   contentDiv.attr("class", "card-content");
@@ -128,9 +153,14 @@ function aboutMe() {
 $(document).ready(function() {
   $(".button-collapse").sideNav();
 
-  aboutMe();
+  // aboutMe();
+  portfolio();
 
   $('.about-me').on('click touch', function(){
     aboutMe();
-  })
+  });
+
+  $('.portfolio').on('click touch', function(){
+    portfolio();
+  });
 })
