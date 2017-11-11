@@ -4,6 +4,24 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+/*
+h1, h2, h3, h4, h5, h6, .brand-logo, .navi {
+  font-family: 'Lora', serif;
+}*/
+
+.main-content {
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+.opening {
+  opacity: 1;
+  transition-duration: 1s;
+  position: absolute;
+  right: 10%;
+  top: 25%;
+}
+
 .nav-wrapper {
   padding-left: 25px;
   background-color: forestGreen;
@@ -15,6 +33,13 @@ body {
     width: 150px;
     height: auto;
   };
+}
+
+@media only screen and (max-width: 1120px) {
+  .opening h1, .opening h5 {
+    color: white;
+    text-shadow: 3px 3px black;
+  }
 }
 
 #about-me-pic {

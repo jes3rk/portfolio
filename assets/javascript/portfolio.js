@@ -71,7 +71,7 @@ function portfolio() {
       "alt": project.imageALT,
     });
 
-    var title = $('<span/>');
+    var title = $('<h6/>');
     title.attr("class", "card-title");
     title.text(project.title);
 
