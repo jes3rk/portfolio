@@ -174,7 +174,6 @@ function displayProject(index) {
 
 // Make big portfolio projects disappear
   $('.close-btn').on('click touch', function() {
-    console.log("test");
     $('.display').empty();
   });
 
