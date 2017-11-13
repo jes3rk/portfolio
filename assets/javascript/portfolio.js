@@ -1,6 +1,7 @@
 var portfolioContent = {
   title: "Portfolio",
   projects: [
+    // Each project is its own opject in an array of objects
     {
       title: "GuileCat",
       descShort: "A modern password generator",
