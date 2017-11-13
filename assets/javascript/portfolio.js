@@ -4,9 +4,10 @@ var portfolioContent = {
     {
       "title": "GuileCat",
       "descShort": "A modern password generator",
+      // descLong is written as one would write html so that styling can happen
       "descLong": "<p>In this age of cybersecurity threats, a strong password is absolutely essential. But strong passwords tend to be exceedingly difficult to remember and so mosy users default to weaker, insecure passwords. Enter <b>GuileCat</b>: a password generator for the digital age. With <b>GuileCat</b>, users can generate secure yet easy to remember passwords to secure their online presence.</p><p><b>GuileCat</b> works on the simple principle that words are considerably easier to remember than a random series of characters. With <b>GuileCat</b>, users are presented with a selection of randomly chosen words outside of the top 10,000 most common words in the English language. The user then can add any number of additional numbers and symbols to their password, ensuring a secure password to safe-guard all their online activities.</p>",
       "image": "./assets/images/GuileCat-logo.jpg",
-      "imageAttr": '<a href="https://www.freepik.com/free-photos-vectors/vintage">Vintage vector created by Freepik</a>',
+      "imageAttr": '<p><a href="https://www.freepik.com/free-photos-vectors/vintage">Vintage vector created by Freepik</a></p>',
       "imageALT": "GuileCat logo",
       "link": "https://jes3rk.github.io/Project1/",
       "gitHub": "https://github.com/jes3rk/Project1"
@@ -172,6 +173,7 @@ function displayProject(index) {
   textCol.append(project.descLong);
   textCol.append("<br>");
   textCol.append(gitLink);
+  textCol.append(project.imageAttr);
 
 
   // Animate in display
@@ -201,16 +203,20 @@ function displayProject(index) {
 
 // Make big portfolio projects disappear
   $('.close-btn').on('click touch', function() {
+    // Make display disappear
     $('.display').animate({
       "opacity": "0"
     }, 500);
+    // Timeout for shrinking the image/row size
     setTimeout(function() {
       $('.portfolio-img').animate({
           "width": "0",
       }, 500);
+      // need to do this cause otherwise it's super janky
       textCol.empty();
       btnRow.empty();
     }, 500);
+    // Long timeout
     setTimeout(function() {
       $('.display').empty();
     }, 1001);
