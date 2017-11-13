@@ -23,6 +23,8 @@ var portfolioContent = {
   ]
 }
 
+var count = 0;
+
 function portfolio() {
   $('#content-row').empty();
 // Primary card col creator
@@ -108,7 +110,6 @@ function portfolio() {
 }
 
 function displayProject(index) {
-  $('.display').empty();
   var project = portfolioContent.projects[index];
 // Create col for picture and button
   var picCol = $('<div/>');
@@ -139,7 +140,7 @@ function displayProject(index) {
   btn.text("Close");
 
 // Put picture and button in
-  $('.display').append(picCol)
+
   picCol.append(imgRow);
   imgRow.append(imgLink);
   picCol.append(btnRow);
@@ -166,15 +167,54 @@ function displayProject(index) {
   });
   gitLink.text("Link to GitHub");
 // Put text in
-  $('.display').append(textCol);
+
   textCol.append(title);
   textCol.append(project.descLong);
   textCol.append("<br>");
   textCol.append(gitLink);
 
+
+  // Animate in display
+  function animate() {
+    count++;
+    $('.display').append(picCol)
+    $('.portfolio-img').animate({
+        "width": "100%",
+    }, 500);
+    setTimeout(function() {
+      $('.display').animate({
+        "opacity": "1"
+      }, 500);
+      $('.display').append(textCol);
+    }, 500);
+  };
+
+  if (count > 0) {
+    $('.display').empty();
+    $('.display').append(picCol);
+    $('.display').append(textCol);
+    $('.portfolio-img').css("width", "100%");
+  } else {
+    animate();
+  };
+
+
 // Make big portfolio projects disappear
   $('.close-btn').on('click touch', function() {
-    $('.display').empty();
+    $('.display').animate({
+      "opacity": "0"
+    }, 500);
+    setTimeout(function() {
+      $('.portfolio-img').animate({
+          "width": "0",
+      }, 500);
+      textCol.empty();
+      btnRow.empty();
+    }, 500);
+    setTimeout(function() {
+      $('.display').empty();
+    }, 1001);
+    count = 0;
   });
 
 }
