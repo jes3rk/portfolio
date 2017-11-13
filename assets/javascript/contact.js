@@ -80,4 +80,4 @@ function contact() {
   $('#content-row').append(colDiv);
 }
 
-export {contactContent, contact};
+export {contact};

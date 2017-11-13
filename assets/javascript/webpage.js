@@ -1,16 +1,16 @@
 // Import modules
-import {aboutMeContent, aboutMe} from "./about_me.js";
-import {portfolioContent, portfolio, displayProject} from "./portfolio.js";
-import {contactContent, contact} from "./contact.js";
+import {aboutMe} from "./about_me.js";
+import {portfolio, displayProject} from "./portfolio.js";
+import {contact} from "./contact.js";
 import {createOpen} from "./opening.js";
 
 function transition(fun) {
   $('#content-row')
-    .animate({opacity: 0}, 750)
-    .animate({opacity:1}, 750);
+    .animate({opacity: 0}, 600)
+    .animate({opacity:1}, 600);
   setTimeout(function() {
     fun();
-  }, 750);
+  }, 600);
 }
 
 

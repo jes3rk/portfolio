@@ -225,4 +225,4 @@ function displayProject(index) {
 
 }
 
-export {portfolioContent, portfolio, displayProject};
+export {portfolio, displayProject};

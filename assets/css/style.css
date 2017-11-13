@@ -13,7 +13,6 @@ body {
 }
 
 .opening {
-  /*opacity: 0;*/
   transition-duration: 1s;
   position: absolute;
   right: 10%;
@@ -66,12 +65,17 @@ body {
 
 .portfolio-img {
   width: 0;
+  transition: opacity .45s
+}
+
+.portfolio-img:hover{
+  opacity: .5;
 }
 
 .display a {
   text-decoration: none;
   color: inherit;
-  transition-duration: .5s;
+  transition-duration: .45s;
 }
 
 .display a:hover {
