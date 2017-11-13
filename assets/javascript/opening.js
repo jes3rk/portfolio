@@ -2,7 +2,7 @@ import {aboutMeContent, aboutMe} from "./about_me.js";
 
 var openContent = {
   "name": "Joseph Schefer",
-  "subTitle": "Full Stack Developer, Technical Analyst",
+  "subTitle": "Full Stack Developer",
 }
 
 function createOpen() {

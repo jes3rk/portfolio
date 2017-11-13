@@ -179,7 +179,6 @@ function displayProject(index) {
   // Animate in display
   function animate() {
     count++;
-    $('.display').append(picCol)
     $('.portfolio-img').animate({
         "width": "100%",
     }, 500);
