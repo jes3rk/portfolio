@@ -6,11 +6,11 @@ import {createOpen} from "./opening.js";
 
 function transition(fun) {
   $('#content-row')
-    .animate({opacity: 0}, 100)
-    .animate({opacity:1}, 100);
+    .animate({opacity: 0}, 750)
+    .animate({opacity:1}, 750);
   setTimeout(function() {
     fun();
-  }, 100);
+  }, 750);
 }
 
 

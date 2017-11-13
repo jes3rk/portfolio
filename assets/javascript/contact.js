@@ -1,5 +1,5 @@
 var contactContent = {
-  "title": "Contact Me",
+  "title": "Get In Touch",
   "email": "joseph.schefer@gmail.com",
   "icons": [
     {
@@ -37,7 +37,7 @@ function contact() {
   colDiv.attr("class", "col sm12 m12");
 
   var cardDiv = $('<div/>');
-  cardDiv.attr("class", "card about");
+  cardDiv.attr("class", "card primary");
 
   var contentDiv = $('<div/>');
   contentDiv.attr("class", "card-content");

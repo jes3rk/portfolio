@@ -179,15 +179,16 @@ function displayProject(index) {
   // Animate in display
   function animate() {
     count++;
+    $('.display').append(picCol);
     $('.portfolio-img').animate({
         "width": "100%",
-    }, 500);
+    }, 750);
     setTimeout(function() {
       $('.display').animate({
         "opacity": "1"
-      }, 500);
+      }, 750);
       $('.display').append(textCol);
-    }, 500);
+    }, 750);
   };
 
   if (count > 0) {
@@ -205,20 +206,20 @@ function displayProject(index) {
     // Make display disappear
     $('.display').animate({
       "opacity": "0"
-    }, 500);
+    }, 750);
     // Timeout for shrinking the image/row size
     setTimeout(function() {
       $('.portfolio-img').animate({
-          "width": "0",
-      }, 500);
+          "width": "0"
+      }, 750);
       // need to do this cause otherwise it's super janky
       textCol.empty();
       btnRow.empty();
-    }, 500);
+    }, 750);
     // Long timeout
     setTimeout(function() {
       $('.display').empty();
-    }, 1001);
+    }, 1501);
     count = 0;
   });
 
