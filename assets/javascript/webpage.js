@@ -1,5 +1,5 @@
 // Import modules
-import {aboutMe} from "./about_me.js";
+import {aboutMeContent, aboutMe} from "./about_me.js";
 import {portfolio, displayProject} from "./portfolio.js";
 import {contact} from "./contact.js";
 import {createOpen} from "./opening.js";
