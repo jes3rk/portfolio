@@ -7,12 +7,22 @@
   scroll-behavior: smooth;
 }*/
 
-html {
+/*html {
   background: url("../images/page_background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}*/
+
+body {
+background: #FFFFFF url('../image/something.jpg') no-repeat fixed top center;
+background-size: cover;
+-webkit-background-size: cover; /* safari may need this */
+}
+html {
+height: 100vh; /* set viewport constraint */
+min-height: 100%; /* enforce height */
 }
 
 .main-content {
