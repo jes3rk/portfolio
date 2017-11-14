@@ -1,10 +1,18 @@
-html {
+/*html {
   background-image: url("../images/page_background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   overflow-y: scroll;
   scroll-behavior: smooth;
+}*/
+
+html {
+  background: url("../images/page_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .main-content {
