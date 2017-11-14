@@ -16,7 +16,7 @@
 }*/
 
 body {
-background: #FFFFFF url('../image/something.jpg') no-repeat fixed top center;
+background: #FFFFFF url("../images/page_background.jpg") no-repeat fixed top center;
 background-size: cover;
 -webkit-background-size: cover; /* safari may need this */
 }
