@@ -18,6 +18,7 @@
 body {
 background: #FFFFFF url("../images/page_background.jpg") no-repeat fixed top center;
 background-size: cover;
+overflow-y: scroll;
 -webkit-background-size: cover; /* safari may need this */
 }
 html {
