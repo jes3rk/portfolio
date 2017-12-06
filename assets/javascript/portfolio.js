@@ -14,6 +14,15 @@ var portfolioContent = {
       gitHub: "https://github.com/jes3rk/Project1"
     },
     {
+      title: "Congressional Data Search",
+      descShort: "A simple search engine for members of Congress",
+      descLong: "<p>What are your Representatives in Congress up to? Using this simple tool, you can get useful information about every currently sitting member of Congress. Currently, the page displays contact information, bill sponsorship/cosponsorship, how often they vote with their party, and how often they miss votes.</p><p>All data is sourced from <a href='https://projects.propublica.org/api-docs/congress-api/' target='_blank'>ProPublica</a> and all charts were built using <a href='https://d3js.org/' target='_blank'>D3.js</a>.</p>",
+      image: "./assets/images/capitol.jpg",
+      imageAlt: "Looking up at the Capitol Building",
+      link: "https://congressional-data.herokuapp.com/",
+      gitHub: "https://github.com/jes3rk/Congressional-Data"
+    },
+    {
       title: "Hangith thee Man",
       descShort: "A simple game of Hangman",
       descLong: "<p>In this short game of Monty Python themed hangman, the player can enjoy a quick and whimsical game.</p>",
