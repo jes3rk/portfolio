@@ -10,8 +10,8 @@ var portfolioContent = {
       image: "./assets/images/GuileCat-logo.jpg",
       imageAttr: '<p><a href="https://www.freepik.com/free-photos-vectors/vintage">Vintage vector created by Freepik</a></p>',
       imageALT: "GuileCat logo",
-      link: "https://jes3rk.github.io/Project1/",
-      gitHub: "https://github.com/jes3rk/Project1"
+      link: "https://jes3rk.github.io/GuileCat/",
+      gitHub: "https://github.com/jes3rk/GuileCat"
     },
     {
       title: "Congressional Data Search",
