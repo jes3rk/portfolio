@@ -58,10 +58,17 @@ min-height: 100%; /* enforce height */
   }
 }
 
+.about a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
 #about-me-pic {
   max-height: 400px;
   float: left;
   margin-right: 10px;
+  border: 2px black solid;
 }
 
 .about p {

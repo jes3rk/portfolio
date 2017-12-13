@@ -4,9 +4,8 @@ var aboutMeContent = {
   pictureALT: "A picture of Joseph Schefer",
   // Put paragraphs as items in an array
   body: [
-    "Knausgaard fashion axe distillery, hammock kale chips gochujang marfa retro heirloom. Artisan jianbing cold-pressed slow-carb, unicorn dreamcatcher VHS cronut post-ironic four loko pok pok sustainable. Ugh food truck twee, cornhole kitsch hella occupy. Lumbersexual small batch asymmetrical, coloring book yuccie activated charcoal bitters cornhole tousled try-hard hoodie salvia man bun cray iceland. Helvetica keffiyeh single-origin coffee typewriter, knausgaard artisan la croix truffaut try-hard glossier hashtag meh. Put a bird on it crucifix everyday carry normcore la croix coloring book. Franzen DIY messenger bag, succulents tacos everyday carry try-hard food truck af sriracha man bun iceland quinoa. Vexillologist brunch pitchfork, iceland pork belly portland hot chicken next level tacos hell of fam single-origin coffee. Waistcoat humblebrag unicorn, adaptogen literally tumeric church-key bitters. Flexitarian scenester yuccie neutra, asymmetrical 90's lo-fi.",
-    "Asymmetrical bespoke pickled, coloring book messenger bag pour-over raw denim. Bicycle rights health goth kickstarter tilde disrupt vaporware iPhone williamsburg aesthetic gentrify copper mug PBR&B cold-pressed bespoke. Retro biodiesel wolf thundercats health goth. Vinyl direct trade disrupt, vexillologist neutra intelligentsia slow-carb woke single-origin coffee cardigan. Tbh waistcoat DIY bicycle rights deep v neutra. Pop-up microdosing leggings austin artisan. Biodiesel jianbing pop-up shabby chic vice bespoke locavore gentrify banh mi.",
-    "I bet you’re still using Bootstrap too…"
+    `Joseph Schefer is a talented web designer and programmer. With training from George Washington University's Coding Bootcamp and a Bachelor's from the University of Virginia in Economics, Joseph is constantly seeking the his next challenge or project. Currently, he is exploring the world of data analytics though publically available Congressional and Voter Registration data. Joseph is constantly pushing boundaries and thrives wherever the phrase "good enough" is never enough.`,
+    "In the past, Joseph worked as a Composer, Audio Engineer, and Theatrical Technician. Through his work in these fields, he gained a plethora of skills and an insatiable drive to push the boundaries of what is possible. In particular, he has spent considerable time programming virtual instruments and occassionally working on small video game projects. His work frequently involved project management and working on Agile-like teams and projects."
   ]
 }
 
@@ -21,7 +20,7 @@ function aboutMe() {
   cardDiv.attr("class", "card about primary");
 
   var contentDiv = $('<div/>');
-  contentDiv.attr("class", "card-content");
+  contentDiv.attr("class", "card-content about");
 
   var title = $('<h1/>');
   title.text(aboutMeContent.title);
@@ -41,6 +40,12 @@ function aboutMe() {
 
   contentDiv.prepend(pic);
   contentDiv.prepend(title);
+  contentDiv.append($('<a/>').attr({
+    href: "https://jschefermusic.com",
+    target: "_blank"
+  })
+  .text("His work on music and audio can be found here."));
+  contentDiv.append()
   cardDiv.append(contentDiv);
   colDiv.append(cardDiv);
   $('#content-row').append(colDiv);
