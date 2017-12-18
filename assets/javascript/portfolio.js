@@ -3,6 +3,15 @@ var portfolioContent = {
   projects: [
     // Each project is its own opject in an array of objects
     {
+      title: "CongressWatch",
+      descShort: "A simple search engine for members of Congress",
+      descLong: "<p>What are your Representatives in Congress up to? Using this simple tool, you can get useful information about every currently sitting member of Congress. Currently, the page displays contact information, bill sponsorship/cosponsorship, how often they vote with their party, and how often they miss votes.</p><p>All data is sourced from <a href='https://projects.propublica.org/api-docs/congress-api/' target='_blank'>ProPublica</a> and all charts were built using <a href='https://d3js.org/' target='_blank'>D3.js</a>.</p>",
+      image: "./assets/images/capitol.jpg",
+      imageAlt: "Looking up at the Capitol Building",
+      link: "https://congressional-data.herokuapp.com/",
+      gitHub: "https://github.com/jes3rk/Congressional-Data"
+    },
+    {
       title: "GuileCat",
       descShort: "A modern password generator",
       // descLong is written as one would write html so that styling can happen
@@ -12,15 +21,6 @@ var portfolioContent = {
       imageALT: "GuileCat logo",
       link: "https://jes3rk.github.io/GuileCat/",
       gitHub: "https://github.com/jes3rk/GuileCat"
-    },
-    {
-      title: "CongressWatch",
-      descShort: "A simple search engine for members of Congress",
-      descLong: "<p>What are your Representatives in Congress up to? Using this simple tool, you can get useful information about every currently sitting member of Congress. Currently, the page displays contact information, bill sponsorship/cosponsorship, how often they vote with their party, and how often they miss votes.</p><p>All data is sourced from <a href='https://projects.propublica.org/api-docs/congress-api/' target='_blank'>ProPublica</a> and all charts were built using <a href='https://d3js.org/' target='_blank'>D3.js</a>.</p>",
-      image: "./assets/images/capitol.jpg",
-      imageAlt: "Looking up at the Capitol Building",
-      link: "https://congressional-data.herokuapp.com/",
-      gitHub: "https://github.com/jes3rk/Congressional-Data"
     },
     // {
     //   title: "Hangith thee Man",
@@ -37,7 +37,8 @@ var portfolioContent = {
       descLong: "<p>In this short game, the user plays as a wood nypmh-esque character wandering through a world. The game itself is quite simple and can be finished very quickly but has a degree of replayability due to the achievements.</p><p>For my part, I wrote the original score for the game and programmed MIDI instruments to perform it. The score itself uses five seperate pieces of music synced to a master clock in order to dynamically change throughout the game.</p>",
       image: "./assets/images/dawn.jpg",
       imageAlt: "Player character observes the world",
-      link: "http://store.steampowered.com/app/605610/Dawn/"
+      link: "http://store.steampowered.com/app/605610/Dawn/",
+      gitHub: "N/A"
     }
   ]
 };
