@@ -22,17 +22,25 @@ var portfolioContent = {
       link: "https://congressional-data.herokuapp.com/",
       gitHub: "https://github.com/jes3rk/Congressional-Data"
     },
+    // {
+    //   title: "Hangith thee Man",
+    //   descShort: "A simple game of Hangman",
+    //   descLong: "<p>In this short game of Monty Python themed hangman, the player can enjoy a quick and whimsical game.</p>",
+    //   image: "./assets/images/holy_grail_god.jpg",
+    //   imageAlt: "GOD in all his glory",
+    //   link: "https://jes3rk.github.io/Hangman-Game/",
+    //   gitHub: "https://github.com/jes3rk/Hangman-Game"
+    // }
     {
-      title: "Hangith thee Man",
-      descShort: "A simple game of Hangman",
-      descLong: "<p>In this short game of Monty Python themed hangman, the player can enjoy a quick and whimsical game.</p>",
-      image: "./assets/images/holy_grail_god.jpg",
-      imageAlt: "GOD in all his glory",
-      link: "https://jes3rk.github.io/Hangman-Game/",
-      gitHub: "https://github.com/jes3rk/Hangman-Game"
+      title: "Dawn",
+      descShort: "A short, relaxing game for all ages",
+      descLong: "<p>In this short game, the user plays as a wood nypmh-esque character wandering through a world. The game itself is quite simple and can be finished very quickly but has a degree of replayability due to the achievements.</p><p>For my part, I wrote the original score for the game and programmed MIDI instruments to perform it. The score itself uses five seperate pieces of music synced to a master clock in order to dynamically change throughout the game.</p>",
+      image: "./assets/images/dawn.jpg",
+      imageAlt: "Player character observes the world",
+      link: "http://store.steampowered.com/app/605610/Dawn/"
     }
   ]
-}
+};
 
 var count = 0;
 
