@@ -3,6 +3,15 @@ var portfolioContent = {
   projects: [
     // Each project is its own opject in an array of objects
     {
+      title: "Votify",
+      descShort: "Analyzing voter turnout data for counties in Washington State",
+      descLong: "<p>How many of your friends and neighbors are registered to vote? How many of them actually show up and cast ballots? The answers to these questions may suprise you...</p><p>Voter turnout is an important measure of civic engagment. Voters who are engaged and interested in the political sphere are the ones who show up and vote on election day, ultimately deciding who goes into office. By analysing the voter turnout data from the state of Washington, <b>Votify</b> gives users important data on the turnout rates in their communities.</p>",
+      image: "./assets/images/washington_flag.svg.png",
+      imageAlt: "State flag of Washington",
+      link: "https://votify-washington.herokuapp.com/",
+      gitHub: "https://github.com/jes3rk/turnout"
+    },
+    {
       title: "CongressWatch",
       descShort: "A simple search engine for members of Congress",
       descLong: "<p>What are your Representatives in Congress up to? Using this simple tool, you can get useful information about every currently sitting member of Congress. Currently, the page displays contact information, bill sponsorship/cosponsorship, how often they vote with their party, and how often they miss votes.</p><p>All data is sourced from <a href='https://projects.propublica.org/api-docs/congress-api/' target='_blank'>ProPublica</a> and all charts were built using <a href='https://d3js.org/' target='_blank'>D3.js</a>.</p>",
@@ -37,8 +46,7 @@ var portfolioContent = {
       descLong: "<p>In this short game, the user plays as a wood nypmh-esque character wandering through a world. The game itself is quite simple and can be finished very quickly but has a degree of replayability due to the achievements.</p><p>For my part, I wrote the original score for the game and programmed MIDI instruments to perform it. The score itself uses five seperate pieces of music synced to a master clock in order to dynamically change throughout the game.</p>",
       image: "./assets/images/dawn.jpg",
       imageAlt: "Player character observes the world",
-      link: "http://store.steampowered.com/app/605610/Dawn/",
-      gitHub: "N/A"
+      link: "http://store.steampowered.com/app/605610/Dawn/"
     }
   ]
 };
