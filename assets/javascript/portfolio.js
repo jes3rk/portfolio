@@ -53,7 +53,70 @@ var portfolioContent = {
 
 var count = 0;
 
+
+
 function portfolio() {
+  function makeCards() {
+    var loopCnt = 0;
+    for (var i = 0; i < Math.floor(portfolioContent.projects.length)/3; i++) {
+    // Row for projects
+      var rowDiv = $('<div/>');
+      rowDiv.attr("class", "row");
+      // loop over 0 - 3
+      for (var j = 0; j < 3; j++) {
+        var x = j + (loopCnt * 3);
+        if (portfolioContent.projects[x]) {
+
+          console.log(loopCnt, x);
+          var project = portfolioContent.projects[x];
+          var colDiv = $('<div/>');
+          colDiv.attr("class", "col sm12 m4");
+
+          var cardDiv = $('<div/>');
+          cardDiv.attr("class", "card project");
+
+          var imgDiv = $('<div/>');
+          imgDiv.attr("class", "card-image");
+
+          var img = $('<img>');
+          img.attr({
+            // "class": "portfolio-img",
+            "src": project.image,
+            "alt": project.imageALT,
+          });
+
+          var title = $('<h6/>');
+          title.attr("class", "card-title");
+          title.text(project.title);
+
+          var icon = $('<a/>');
+          icon.attr({
+            "class": "btn-floating halfway-fab waves-effect waves-light red",
+            "data-index": x,
+          });
+          icon.html('<i class="material-icons">add</i>');
+
+          var contentDiv = $('<div/>');
+          contentDiv.attr("class", "card-content");
+
+          var contentShort = $('<p/>');
+          contentShort.text(project.descShort);
+
+          // Put it all together in the loop
+          contentDiv.append(contentShort);
+          cardDiv.append(contentDiv);
+          imgDiv.append(img);
+          contentDiv.prepend(title);
+          imgDiv.append(icon);
+          cardDiv.prepend(imgDiv);
+          colDiv.append(cardDiv);
+          rowDiv.append(colDiv);
+        };
+      };
+      contentPri.append(rowDiv);
+      loopCnt++;
+    };
+  };
   $('#content-row').empty();
 // Primary card col creator
   var colPri = $('<div/>');
@@ -67,9 +130,7 @@ function portfolio() {
 // Primary card title
   var titlePri = $('<h1/>');
   titlePri.text(portfolioContent.title);
-// Row for projects... still needs work
-  var rowDiv = $('<div/>');
-  rowDiv.attr("class", "row");
+
 // Row to display in-depth project
   var dispDiv = $('<div/>');
   dispDiv.attr("class", "row display")
@@ -80,62 +141,14 @@ function portfolio() {
   contentPri.prepend(dispDiv);
   contentPri.prepend(titlePri);
 
+  // call the generation function
+  makeCards();
 
-  for (var i = 0; i < portfolioContent.projects.length; i++) {
-    var project = portfolioContent.projects[i];
-
-// Create cards
-    var colDiv = $('<div/>');
-    colDiv.attr("class", "col sm12 m4");
-
-    var cardDiv = $('<div/>');
-    cardDiv.attr("class", "card project");
-
-    var imgDiv = $('<div/>');
-    imgDiv.attr("class", "card-image");
-
-    var img = $('<img>');
-    img.attr({
-      // "class": "portfolio-img",
-      "src": project.image,
-      "alt": project.imageALT,
-    });
-
-    var title = $('<h6/>');
-    title.attr("class", "card-title");
-    title.text(project.title);
-
-    var icon = $('<a/>');
-    icon.attr({
-      "class": "btn-floating halfway-fab waves-effect waves-light red",
-      "data-index": i,
-    });
-    icon.html('<i class="material-icons">add</i>');
-
-    var contentDiv = $('<div/>');
-    contentDiv.attr("class", "card-content");
-
-    var contentShort = $('<p/>');
-    contentShort.text(project.descShort);
-
-    // Put it all together in the loop
-    contentDiv.append(contentShort);
-    cardDiv.append(contentDiv);
-    imgDiv.append(img);
-    contentDiv.prepend(title);
-    imgDiv.append(icon);
-    cardDiv.prepend(imgDiv);
-    colDiv.append(cardDiv);
-    rowDiv.append(colDiv)
-    contentPri.append(rowDiv);
-
-// End of for loop
-  };
 // Make portfolio projects go big
   $('.btn-floating').on('click touch', function() {
     displayProject($(this).attr("data-index"));
   });
-}
+};
 
 function displayProject(index) {
   var project = portfolioContent.projects[index];
@@ -250,6 +263,6 @@ function displayProject(index) {
     count = 0;
   });
 
-}
+};
 
 export {portfolio, displayProject};
