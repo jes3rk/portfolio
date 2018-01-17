@@ -4,7 +4,7 @@ var aboutMeContent = {
   pictureALT: "A picture of Joseph Schefer",
   // Put paragraphs as items in an array
   body: [
-    `Joseph Schefer is a talented web designer and programmer. With training from George Washington University's Coding Bootcamp and a Bachelor's from the University of Virginia in Economics, Joseph is constantly seeking the his next challenge or project. Currently, he is exploring the world of data analytics though publically available Congressional and Voter Registration data. Joseph is constantly pushing boundaries and thrives wherever the phrase "good enough" is never enough.`,
+    `Joseph Schefer is a talented web designer and programmer. With training from George Washington University's Coding Bootcamp and a Bachelor's from the University of Virginia in Economics, Joseph is constantly seeking the his next challenge or project. Currently he is working in React and React Native, developing dynamic webpages and apps for use in industry and peer-to-peer sharing. Joseph is constantly pushing boundaries and thrives wherever the phrase "good enough" is never enough.`,
     "In the past, Joseph worked as a Composer, Audio Engineer, and Theatrical Technician. Through his work in these fields, he gained a plethora of skills and an insatiable drive to push the boundaries of what is possible. In particular, he has spent considerable time programming virtual instruments and occassionally working on small video game projects. His work frequently involved project management and working on Agile-like teams and projects."
   ]
 }

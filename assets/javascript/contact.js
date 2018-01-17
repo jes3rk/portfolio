@@ -14,12 +14,12 @@ var contactContent = {
       alt: "GitHub icon",
       link: "https://github.com/jes3rk"
     },
-    {
-      title: "StackOverflow",
-      icon: "./assets/images/icon_stackoverflow.png",
-      alt: "StackOverFlow icon",
-      link: "https://stackoverflow.com/users/8705338/joseph"
-    },
+    // {
+    //   title: "StackOverflow",
+    //   icon: "./assets/images/icon_stackoverflow.png",
+    //   alt: "StackOverFlow icon",
+    //   link: "https://stackoverflow.com/users/8705338/joseph"
+    // },
     {
       title: "gmail",
       icon: "./assets/images/icon_gmail.png",
