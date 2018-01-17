@@ -5,7 +5,9 @@ var portfolioContent = {
     {
       title: "Votify",
       descShort: "Analyzing voter turnout data for counties in Washington State",
-      descLong: "<p>How many of your friends and neighbors are registered to vote? How many of them actually show up and cast ballots? The answers to these questions may suprise you...</p><p>Voter turnout is an important measure of civic engagment. Voters who are engaged and interested in the political sphere are the ones who show up and vote on election day, ultimately deciding who goes into office. By analysing the voter turnout data from the state of Washington, <b>Votify</b> gives users important data on the turnout rates in their communities.</p>",
+      descLong: "<p>How many of your friends and neighbors are registered to vote? How many of them actually show up and cast ballots? The answers to these questions may suprise you...</p>
+      <p>Voter turnout is an important measure of civic engagment. Voters who are engaged and interested in the political sphere are the ones who show up and vote on election day, ultimately deciding who goes into office. By analysing the voter turnout data from the state of Washington, <b>Votify</b> gives users important data on the turnout rates in their communities.</p>",
+      tech: "D3.js, Leaflet, Materialize, NodeJs, Express, Handlebars, HTML, CSS, JavaScript, jQuery",
       image: "./assets/images/washington_flag.svg.png",
       imageAlt: "State flag of Washington",
       link: "https://votify-washington.herokuapp.com/",
@@ -15,6 +17,7 @@ var portfolioContent = {
       title: "CongressWatch",
       descShort: "A simple search engine for members of Congress",
       descLong: "<p>What are your Representatives in Congress up to? Using this simple tool, you can get useful information about every currently sitting member of Congress. Currently, the page displays contact information, bill sponsorship/cosponsorship, how often they vote with their party, and how often they miss votes.</p><p>All data is sourced from <a href='https://projects.propublica.org/api-docs/congress-api/' target='_blank'>ProPublica</a> and all charts were built using <a href='https://d3js.org/' target='_blank'>D3.js</a>.</p>",
+      tech: "D3.js, Materialize, NodeJs, Express, Handlebars, HTML, CSS, JavaScript, jQuery",
       image: "./assets/images/capitol.jpg",
       imageAlt: "Looking up at the Capitol Building",
       link: "https://congressional-data.herokuapp.com/",
@@ -25,6 +28,7 @@ var portfolioContent = {
       descShort: "A modern password generator",
       // descLong is written as one would write html so that styling can happen
       descLong: "<p>In this age of cybersecurity threats, a strong password is absolutely essential. But strong passwords tend to be exceedingly difficult to remember and so mosy users default to weaker, insecure passwords. Enter <b>GuileCat</b>: a password generator for the digital age. With <b>GuileCat</b>, users can generate secure yet easy to remember passwords to secure their online presence.</p><p><b>GuileCat</b> works on the simple principle that words are considerably easier to remember than a random series of characters. With <b>GuileCat</b>, users are presented with a selection of randomly chosen words outside of the top 10,000 most common words in the English language. The user then can add any number of additional numbers and symbols to their password, ensuring a secure password to safe-guard all their online activities.</p>",
+      tech: "HTML, CSS, JavaScript, jQuery, jQueryUI, Bootstrap, Drum.js"
       image: "./assets/images/GuileCat-logo.jpg",
       imageAttr: '<p><a href="https://www.freepik.com/free-photos-vectors/vintage">Vintage vector created by Freepik</a></p>',
       imageALT: "GuileCat logo",
@@ -44,6 +48,7 @@ var portfolioContent = {
       title: "Dawn",
       descShort: "A short, relaxing game for all ages",
       descLong: "<p>In this short game, the user plays as a wood nypmh-esque character wandering through a world. The game itself is quite simple and can be finished very quickly but has a degree of replayability due to the achievements.</p><p>For my part, I wrote the original score for the game and programmed MIDI instruments to perform it. The score itself uses five seperate pieces of music synced to a master clock in order to dynamically change throughout the game.</p>",
+      tech: "MIDI, Virtual Instruments, Digital Performer 9.1"
       image: "./assets/images/dawn.jpg",
       imageAlt: "Player character observes the world",
       link: "http://store.steampowered.com/app/605610/Dawn/"
@@ -207,10 +212,15 @@ function displayProject(index) {
     "target": "_blank"
   });
   gitLink.text("Link to GitHub");
+
+  var tech = $('<p/>');
+  tech.text("Technologies uesd: " + project.tech.join(", "));
 // Put text in
 
   textCol.append(title);
   textCol.append(project.descLong);
+  textCol.append("<br>");
+  textCol.append(tech);
   textCol.append("<br>");
   textCol.append(gitLink);
   textCol.append(project.imageAttr);
